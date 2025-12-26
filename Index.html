@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bamboo Online Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Bamboo Café</h1>
+  <p>Order online • Pay in store</p>
+</header>
+
+<section class="menu">
+  <div class="item">
+    <h3>Sahlab</h3>
+    <p>Rich, creamy chocolate comfort</p>
+    <span>60 EGP</span>
+    <button onclick="addItem('Sahlab', 60)">Add</button>
+  </div>
+
+  <div class="item">
+    <h3>Hot Chocolate</h3>
+    <p>Rich & creamy cocoa</p>
+    <span>70 EGP</span>
+    <button onclick="addItem('Hot Chocolate', 70)">Add</button>
+  </div>
+</section>
+
+<footer>
+  <button class="order" onclick="sendWhatsApp()">Order via WhatsApp</button>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
