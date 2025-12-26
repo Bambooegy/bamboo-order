@@ -1,4 +1,4 @@
-const whatsappNumber = "201019634984"; // ← رقمك
+const whatsappNumber = "201019634984"; // رقمك
 
 const menuData = {
   "Coffee Boba": [
@@ -46,20 +46,26 @@ for (let category in menuData) {
   menuData[category].forEach(item => {
     const div = document.createElement("div");
     div.className = "item";
-    div.innerHTML = `
-      <h4>${item[0]}</h4>
-      <select>
-        <option value="Medium - ${item[1]} EGP">Medium - ${item[1]} EGP</option>
-        <option value="Large - ${item[2]} EGP">Large - ${item[2]} EGP</option>
-      </select>
-      <button>Add</button>
-    `;
+    div.innerHTML = `<h4>${item[0]}</h4>`;
 
-    div.querySelector("button").onclick = () => {
-      const choice = div.querySelector("select").value;
-      cart.push(`${item[0]} (${choice})`);
+    // زر Medium
+    const btnMedium = document.createElement("button");
+    btnMedium.textContent = `Medium - ${item[1]} EGP`;
+    btnMedium.onclick = () => {
+      cart.push(`${item[0]} (Medium - ${item[1]} EGP)`);
       renderCart();
     };
+
+    // زر Large
+    const btnLarge = document.createElement("button");
+    btnLarge.textContent = `Large - ${item[2]} EGP`;
+    btnLarge.onclick = () => {
+      cart.push(`${item[0]} (Large - ${item[2]} EGP)`);
+      renderCart();
+    };
+
+    div.appendChild(btnMedium);
+    div.appendChild(btnLarge);
 
     section.appendChild(div);
   });
