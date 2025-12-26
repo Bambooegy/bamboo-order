@@ -1,23 +1,15 @@
-let order = [];
+function order(itemName) {
+  const size = prompt(
+    "Choose size:\nM = Medium\nL = Large",
+    "M"
+  );
 
-function addToOrder(name, element) {
-  let size = element.previousElementSibling.value;
-  order.push(`${name} - ${size}`);
-  alert("Added to order ✅");
-}
+  if (!size) return;
 
-function sendWhatsApp() {
-  if (order.length === 0) {
-    alert("Please add items first");
-    return;
-  }
+  const phone = "201019634984"; // ← ضع رقم واتساب هنا
+  const message = `New Order:%0AItem: ${itemName}%0ASize: ${size.toUpperCase()}`;
 
-  let message = "Hello Bamboo 🌿%0A%0AMy Order:%0A";
-  order.forEach(item => {
-    message += `- ${item}%0A`;
-  });
-
-  let phone = "201019634984"; // ← حط رقم الواتساب هنا
-  let url = `https://wa.me/${phone}?text=${message}`;
+  const url = `https://wa.me/${phone}?text=${message}`;
   window.open(url, "_blank");
 }
+
