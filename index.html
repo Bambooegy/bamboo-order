@@ -2,96 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Bamboo | Online Order</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Bamboo Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>🍵 Bamboo Menu</h1>
-  <p>Order easily via WhatsApp</p>
+  <h1>🍃 Bamboo Café</h1>
+  <p>Order online • WhatsApp confirmation</p>
 </header>
 
-<div class="container">
+<main class="menu">
 
   <!-- Coffee Boba -->
-  <h2>Coffee Boba</h2>
+  <section>
+    <h2>Coffee Boba</h2>
 
-  <div class="item">
-    <span>Iced Latte Boba</span>
-    <select>
-      <option>Medium - 150 EGP</option>
-      <option>Large - 180 EGP</option>
-    </select>
-    <button onclick="addToOrder('Iced Latte Boba', this)">Add</button>
-  </div>
+    <div class="item">
+      <span>Iced Latte Boba</span>
+      <button onclick="order('Iced Latte Boba')">Order</button>
+    </div>
 
-  <div class="item">
-    <span>Dalgona Boba</span>
-    <select>
-      <option>Medium - 170 EGP</option>
-      <option>Large - 195 EGP</option>
-    </select>
-    <button onclick="addToOrder('Dalgona Boba', this)">Add</button>
-  </div>
+    <div class="item">
+      <span>Dalgona Boba</span>
+      <button onclick="order('Dalgona Boba')">Order</button>
+    </div>
 
-  <div class="item">
-    <span>Spanish Latte Boba</span>
-    <select>
-      <option>Medium - 155 EGP</option>
-      <option>Large - 185 EGP</option>
-    </select>
-    <button onclick="addToOrder('Spanish Latte Boba', this)">Add</button>
-  </div>
+    <div class="item">
+      <span>Spanish Latte Boba</span>
+      <button onclick="order('Spanish Latte Boba')">Order</button>
+    </div>
+  </section>
 
   <!-- Popping Boba -->
-  <h2>Popping Boba</h2>
+  <section>
+    <h2>Popping Boba</h2>
 
-  <div class="item">
-    <span>Red Bull Popping Boba</span>
-    <select>
-      <option>Medium - 150 EGP</option>
-      <option>Large - 175 EGP</option>
-    </select>
-    <button onclick="addToOrder('Red Bull Popping Boba', this)">Add</button>
-  </div>
+    <div class="item">
+      <span>Red Bull Popping Boba</span>
+      <button onclick="order('Red Bull Popping Boba')">Order</button>
+    </div>
 
-  <div class="item">
-    <span>Popping Boba Fruit Tea</span>
-    <select>
-      <option>Medium - 130 EGP</option>
-      <option>Large - 160 EGP</option>
-    </select>
-    <button onclick="addToOrder('Popping Boba Fruit Tea', this)">Add</button>
-  </div>
+    <div class="item">
+      <span>Popping Boba Fruit Tea</span>
+      <button onclick="order('Popping Boba Fruit Tea')">Order</button>
+    </div>
+  </section>
 
-  <!-- Milk Tea Boba -->
-  <h2>Milk Tea Boba</h2>
+  <!-- Milk Tea -->
+  <section>
+    <h2>Milk Tea Boba</h2>
 
-  <div class="item">
-    <span>Classic Boba</span>
-    <select>
-      <option>Medium - 120 EGP</option>
-      <option>Large - 155 EGP</option>
-    </select>
-    <button onclick="addToOrder('Classic Boba', this)">Add</button>
-  </div>
+    <div class="item">
+      <span>Classic Boba</span>
+      <button onclick="order('Classic Boba')">Order</button>
+    </div>
 
-  <div class="item">
-    <span>Brown Sugar Milk Boba</span>
-    <select>
-      <option>Medium - 135 EGP</option>
-      <option>Large - 165 EGP</option>
-    </select>
-    <button onclick="addToOrder('Brown Sugar Milk Boba', this)">Add</button>
-  </div>
+    <div class="item">
+      <span>Brown Sugar Milk Boba</span>
+      <button onclick="order('Brown Sugar Milk Boba')">Order</button>
+    </div>
+  </section>
 
-  <!-- Order Button -->
-  <div class="order-box">
-    <button class="whatsapp" onclick="sendWhatsApp()">Order via WhatsApp</button>
-  </div>
+</main>
 
-</div>
+<footer>
+  © Bamboo Café – Cairo
+</footer>
 
 <script src="script.js"></script>
 </body>
