@@ -1,57 +1,66 @@
 body {
   font-family: Arial, sans-serif;
+  background: #f6f6f6;
   margin: 0;
-  background: #f7f7f7;
 }
 
 header {
-  background: #0a7d55;
+  background: #1f7a4f;
   color: white;
   padding: 20px;
   text-align: center;
 }
 
-.menu {
+.container {
+  max-width: 700px;
+  margin: auto;
   padding: 20px;
+}
+
+h2 {
+  margin-top: 30px;
+  color: #1f7a4f;
 }
 
 .item {
   background: white;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.item h3 {
-  margin: 0;
-}
-
-.item button {
-  margin-top: 10px;
-  background: #0a7d55;
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
   border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: white;
-  padding: 10px;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+.item span {
+  flex: 1;
+  font-weight: bold;
 }
 
-.order {
-  background: #25D366;
+select {
+  padding: 6px;
+}
+
+button {
+  background: #1f7a4f;
   color: white;
   border: none;
-  padding: 15px;
-  width: 100%;
-  font-size: 16px;
-  border-radius: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #155c3a;
+}
+
+.order-box {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.whatsapp {
+  background: #25d366;
+  font-size: 18px;
+  padding: 12px 20px;
 }
