@@ -1,38 +1,46 @@
 const whatsappNumber = "201019634984"; // رقمك
 
 const menuData = {
-  "Coffee Boba": [
-    ["Iced Latte Boba", 150, 180],
-    ["Dalgona Boba", 170, 195],
-    ["Spanish Latte Boba", 155, 185]
+  "Ice-Cream": [
+    ["Mix flavor", 55, 115] // Medium و Large
   ],
-  "Popping Boba": [
-    ["Red Bull Popping Boba", 150, 175],
-    ["Popping Boba Fruit Tea", 130, 160]
+  "Milkshake": [
+    ["Strawberry Milkshake", 140, 165] // Medium و Large
+    // Raspberry Milkshake غير منشور
   ],
-  "Milk Tea Boba": [
-    ["Classic Boba", 120, 155],
-    ["Brown Sugar Milk Boba", 135, 165]
+  "Iced Coffee": [
+    ["Iced Latte", 125],
+    ["Iced Spanish Latte", 135],
+    ["Iced Americano", 90]
   ],
-  "Taro Boba": [
-    ["Classic Taro", 150, 180],
-    ["Brown Sugar Taro Boba", 160, 185]
+  "Desserts": [
+    ["Walnut and Caramel Cheesecake", 120],
+    ["Lotus Cheesecake", 120],
+    ["Blueberry Cheesecake", 120]
   ],
-  "Matcha Boba": [
-    ["Matcha Boba", 155, 185],
-    ["Brown Sugar Matcha", 165, 185],
-    ["Strawberry Matcha Latte Boba", 175, 190]
+  "Hot Drinks": [
+    ["Espresso", 60],
+    ["Double Espresso", 85],
+    ["Americano", 75],
+    ["Cappuccino", 95],
+    ["Caffè Latte", 95],
+    ["Spanish Latte", 110],
+    ["Macchiato", 95],
+    ["Cortado", 95],
+    ["French Coffee", 85],
+    ["Flat White", 95],
+    ["Mocha", 95],
+    ["Turkish Coffee", 70],
+    ["Black Tea", 45],
+    ["Green Tea", 55],
+    ["Hot Chocolate", 110]
   ],
-  "Milk Boba": [
-    ["Oreo Milk Boba", 160, 195],
-    ["Lotus Milk Boba", 160, 195],
-    ["Chocolate Milk Boba", 155, 190],
-    ["Caramel Milk Boba", 155, 190],
-    ["Red Velvet Milk Boba", 160, 195],
-    ["Mango Milk Boba", 150, 180],
-    ["Blueberry Milk Boba", 150, 180],
-    ["Strawberry Milk Boba", 150, 180],
-    ["Watermelon Milk Boba", 150, 180]
+  "Fresh Juices": [
+    ["Fresh Mango", 85],
+    ["Fresh Strawberry", 85],
+    ["Orange Juice", 85],
+    ["Lemon Mint", 85],
+    ["Banana Milkshake", 85]
   ]
 };
 
@@ -48,24 +56,32 @@ for (let category in menuData) {
     div.className = "item";
     div.innerHTML = `<h4>${item[0]}</h4>`;
 
-    // زر Medium
-    const btnMedium = document.createElement("button");
-    btnMedium.textContent = `Medium - ${item[1]} EGP`;
-    btnMedium.onclick = () => {
-      cart.push(`${item[0]} (Medium - ${item[1]} EGP)`);
-      renderCart();
-    };
+    if (item.length === 3) { // Medium و Large
+      const btnMedium = document.createElement("button");
+      btnMedium.textContent = `Medium - ${item[1]} EGP`;
+      btnMedium.onclick = () => {
+        cart.push(`${item[0]} (Medium - ${item[1]} EGP)`);
+        renderCart();
+      };
 
-    // زر Large
-    const btnLarge = document.createElement("button");
-    btnLarge.textContent = `Large - ${item[2]} EGP`;
-    btnLarge.onclick = () => {
-      cart.push(`${item[0]} (Large - ${item[2]} EGP)`);
-      renderCart();
-    };
+      const btnLarge = document.createElement("button");
+      btnLarge.textContent = `Large - ${item[2]} EGP`;
+      btnLarge.onclick = () => {
+        cart.push(`${item[0]} (Large - ${item[2]} EGP)`);
+        renderCart();
+      };
 
-    div.appendChild(btnMedium);
-    div.appendChild(btnLarge);
+      div.appendChild(btnMedium);
+      div.appendChild(btnLarge);
+    } else { // سعر واحد فقط
+      const btnSingle = document.createElement("button");
+      btnSingle.textContent = `${item[1]} EGP`;
+      btnSingle.onclick = () => {
+        cart.push(`${item[0]} (${item[1]} EGP)`);
+        renderCart();
+      };
+      div.appendChild(btnSingle);
+    }
 
     section.appendChild(div);
   });
