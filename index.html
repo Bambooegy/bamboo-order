@@ -1,41 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Bamboo Online Order</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Bamboo | Online Order</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header>
-  <h1>Bamboo Boba </h1>
-  <p>Order Now On Talabat </p>
+  <h1>🍵 Bamboo Menu</h1>
+  <p>Order easily via WhatsApp</p>
 </header>
 
-<section class="menu">
+<div class="container">
+
+  <!-- Coffee Boba -->
+  <h2>Coffee Boba</h2>
+
   <div class="item">
-    <h3>Sahlab</h3>
-    <p>Rich, creamy chocolate comfort</p>
-    <span>60 EGP</span>
-    <button onclick="addItem('Sahlab', 60)">Add</button>
+    <span>Iced Latte Boba</span>
+    <select>
+      <option>Medium - 150 EGP</option>
+      <option>Large - 180 EGP</option>
+    </select>
+    <button onclick="addToOrder('Iced Latte Boba', this)">Add</button>
   </div>
 
   <div class="item">
-    <h3>Hot Chocolate</h3>
-    <p>Rich & creamy cocoa</p>
-    <span>70 EGP</span>
-    <button onclick="addItem('Hot Chocolate', 70)">Add</button>
+    <span>Dalgona Boba</span>
+    <select>
+      <option>Medium - 170 EGP</option>
+      <option>Large - 195 EGP</option>
+    </select>
+    <button onclick="addToOrder('Dalgona Boba', this)">Add</button>
   </div>
-</section>
 
-<footer>
-  <button class="order" onclick="sendWhatsApp()">Order via WhatsApp</button>
-</footer>
+  <div class="item">
+    <span>Spanish Latte Boba</span>
+    <select>
+      <option>Medium - 155 EGP</option>
+      <option>Large - 185 EGP</option>
+    </select>
+    <button onclick="addToOrder('Spanish Latte Boba', this)">Add</button>
+  </div>
+
+  <!-- Popping Boba -->
+  <h2>Popping Boba</h2>
+
+  <div class="item">
+    <span>Red Bull Popping Boba</span>
+    <select>
+      <option>Medium - 150 EGP</option>
+      <option>Large - 175 EGP</option>
+    </select>
+    <button onclick="addToOrder('Red Bull Popping Boba', this)">Add</button>
+  </div>
+
+  <div class="item">
+    <span>Popping Boba Fruit Tea</span>
+    <select>
+      <option>Medium - 130 EGP</option>
+      <option>Large - 160 EGP</option>
+    </select>
+    <button onclick="addToOrder('Popping Boba Fruit Tea', this)">Add</button>
+  </div>
+
+  <!-- Milk Tea Boba -->
+  <h2>Milk Tea Boba</h2>
+
+  <div class="item">
+    <span>Classic Boba</span>
+    <select>
+      <option>Medium - 120 EGP</option>
+      <option>Large - 155 EGP</option>
+    </select>
+    <button onclick="addToOrder('Classic Boba', this)">Add</button>
+  </div>
+
+  <div class="item">
+    <span>Brown Sugar Milk Boba</span>
+    <select>
+      <option>Medium - 135 EGP</option>
+      <option>Large - 165 EGP</option>
+    </select>
+    <button onclick="addToOrder('Brown Sugar Milk Boba', this)">Add</button>
+  </div>
+
+  <!-- Order Button -->
+  <div class="order-box">
+    <button class="whatsapp" onclick="sendWhatsApp()">Order via WhatsApp</button>
+  </div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
