@@ -21,7 +21,8 @@ function sendWhatsApp() {
 
   message += `%0ATotal: ${total} EGP`;
 
-  let phone = "2010XXXXXXX"; // رقم الواتساب
+  let phone = "201019634984"; // رقم الواتساب
   let url = `https://wa.me/${phone}?text=${message}`;
   window.open(url, "_blank");
 }
+
