@@ -1,74 +1,68 @@
-* {
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
 body {
   margin: 0;
-  background: #f5f7f6;
-  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
+  color: #333;
 }
 
 header {
-  background: linear-gradient(135deg, #0f766e, #16a34a);
+  background: #0f5132;
   color: white;
-  text-align: center;
-  padding: 25px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 28px;
-}
-
-.menu {
   padding: 20px;
-  max-width: 600px;
-  margin: auto;
+  text-align: center;
 }
 
 section {
-  background: white;
-  border-radius: 14px;
   padding: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
 
-section h2 {
-  margin-top: 0;
-  color: #0f766e;
+h2 {
+  border-left: 5px solid #0f5132;
+  padding-left: 10px;
 }
 
 .item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.item:last-child {
-  border-bottom: none;
+.item h4 {
+  margin: 0 0 5px;
 }
 
-button {
-  background: #16a34a;
+.item select, .item button {
+  padding: 8px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.item button {
+  background: #0f5132;
   color: white;
   border: none;
-  padding: 8px 14px;
-  border-radius: 20px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
 }
 
-button:hover {
-  background: #15803d;
+.cart {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 2px solid #eee;
+  padding: 10px;
 }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-  color: #666;
+.cart button {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
 }
