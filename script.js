@@ -1,15 +1,84 @@
-function order(itemName) {
-  const size = prompt(
-    "Choose size:\nM = Medium\nL = Large",
-    "M"
-  );
+const whatsappNumber = "201019634984"; // ← رقمك
 
-  if (!size) return;
+const menuData = {
+  "Coffee Boba": [
+    ["Iced Latte Boba", 150, 180],
+    ["Dalgona Boba", 170, 195],
+    ["Spanish Latte Boba", 155, 185]
+  ],
+  "Popping Boba": [
+    ["Red Bull Popping Boba", 150, 175],
+    ["Popping Boba Fruit Tea", 130, 160]
+  ],
+  "Milk Tea Boba": [
+    ["Classic Boba", 120, 155],
+    ["Brown Sugar Milk Boba", 135, 165]
+  ],
+  "Taro Boba": [
+    ["Classic Taro", 150, 180],
+    ["Brown Sugar Taro Boba", 160, 185]
+  ],
+  "Matcha Boba": [
+    ["Matcha Boba", 155, 185],
+    ["Brown Sugar Matcha", 165, 185],
+    ["Strawberry Matcha Latte Boba", 175, 190]
+  ],
+  "Milk Boba": [
+    ["Oreo Milk Boba", 160, 195],
+    ["Lotus Milk Boba", 160, 195],
+    ["Chocolate Milk Boba", 155, 190],
+    ["Caramel Milk Boba", 155, 190],
+    ["Red Velvet Milk Boba", 160, 195],
+    ["Mango Milk Boba", 150, 180],
+    ["Blueberry Milk Boba", 150, 180],
+    ["Strawberry Milk Boba", 150, 180],
+    ["Watermelon Milk Boba", 150, 180]
+  ]
+};
 
-  const phone = "201019634984"; // ← ضع رقم واتساب هنا
-  const message = `New Order:%0AItem: ${itemName}%0ASize: ${size.toUpperCase()}`;
+const cart = [];
+const menu = document.getElementById("menu");
 
-  const url = `https://wa.me/${phone}?text=${message}`;
-  window.open(url, "_blank");
+for (let category in menuData) {
+  const section = document.createElement("section");
+  section.innerHTML = `<h2>${category}</h2>`;
+
+  menuData[category].forEach(item => {
+    const div = document.createElement("div");
+    div.className = "item";
+    div.innerHTML = `
+      <h4>${item[0]}</h4>
+      <select>
+        <option value="Medium - ${item[1]} EGP">Medium - ${item[1]} EGP</option>
+        <option value="Large - ${item[2]} EGP">Large - ${item[2]} EGP</option>
+      </select>
+      <button>Add</button>
+    `;
+
+    div.querySelector("button").onclick = () => {
+      const choice = div.querySelector("select").value;
+      cart.push(`${item[0]} (${choice})`);
+      renderCart();
+    };
+
+    section.appendChild(div);
+  });
+
+  menu.appendChild(section);
 }
 
+function renderCart() {
+  const list = document.getElementById("cartItems");
+  list.innerHTML = "";
+  cart.forEach(i => {
+    const li = document.createElement("li");
+    li.textContent = i;
+    list.appendChild(li);
+  });
+}
+
+function sendWhatsApp() {
+  if (cart.length === 0) return alert("Cart is empty");
+  const message = "Hello Bamboo 🌿%0AOrder:%0A" + cart.join("%0A");
+  window.open(`https://wa.me/${whatsappNumber}?text=${message}`);
+}
