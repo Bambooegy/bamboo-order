@@ -3,73 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <title>Bamboo Order</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header>
-  <h1>🍃 Bamboo Café</h1>
-  <p>Order online • WhatsApp confirmation</p>
+  <h1>Bamboo Café</h1>
+  <p>Order Online • WhatsApp</p>
 </header>
 
-<main class="menu">
+<main id="menu"></main>
 
-  <!-- Coffee Boba -->
-  <section>
-    <h2>Coffee Boba</h2>
-
-    <div class="item">
-      <span>Iced Latte Boba</span>
-      <button onclick="order('Iced Latte Boba')">Order</button>
-    </div>
-
-    <div class="item">
-      <span>Dalgona Boba</span>
-      <button onclick="order('Dalgona Boba')">Order</button>
-    </div>
-
-    <div class="item">
-      <span>Spanish Latte Boba</span>
-      <button onclick="order('Spanish Latte Boba')">Order</button>
-    </div>
-  </section>
-
-  <!-- Popping Boba -->
-  <section>
-    <h2>Popping Boba</h2>
-
-    <div class="item">
-      <span>Red Bull Popping Boba</span>
-      <button onclick="order('Red Bull Popping Boba')">Order</button>
-    </div>
-
-    <div class="item">
-      <span>Popping Boba Fruit Tea</span>
-      <button onclick="order('Popping Boba Fruit Tea')">Order</button>
-    </div>
-  </section>
-
-  <!-- Milk Tea -->
-  <section>
-    <h2>Milk Tea Boba</h2>
-
-    <div class="item">
-      <span>Classic Boba</span>
-      <button onclick="order('Classic Boba')">Order</button>
-    </div>
-
-    <div class="item">
-      <span>Brown Sugar Milk Boba</span>
-      <button onclick="order('Brown Sugar Milk Boba')">Order</button>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © Bamboo Café – Cairo
-</footer>
+<div class="cart">
+  <h3>Your Order</h3>
+  <ul id="cartItems"></ul>
+  <button onclick="sendWhatsApp()">Order via WhatsApp</button>
+</div>
 
 <script src="script.js"></script>
 </body>
