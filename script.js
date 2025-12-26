@@ -1,28 +1,23 @@
-let cart = [];
+let order = [];
 
-function addItem(name, price) {
-  cart.push({ name, price });
-  alert(name + " added");
+function addToOrder(name, element) {
+  let size = element.previousElementSibling.value;
+  order.push(`${name} - ${size}`);
+  alert("Added to order ✅");
 }
 
 function sendWhatsApp() {
-  if (cart.length === 0) {
-    alert("Cart is empty");
+  if (order.length === 0) {
+    alert("Please add items first");
     return;
   }
 
-  let message = "New Order:%0A";
-  let total = 0;
-
-  cart.forEach(item => {
-    message += `- ${item.name} (${item.price} EGP)%0A`;
-    total += item.price;
+  let message = "Hello Bamboo 🌿%0A%0AMy Order:%0A";
+  order.forEach(item => {
+    message += `- ${item}%0A`;
   });
 
-  message += `%0ATotal: ${total} EGP`;
-
-  let phone = "201019634984"; // رقم الواتساب
+  let phone = "201019634984"; // ← حط رقم الواتساب هنا
   let url = `https://wa.me/${phone}?text=${message}`;
   window.open(url, "_blank");
 }
-
