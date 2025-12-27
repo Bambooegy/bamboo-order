@@ -1,4 +1,4 @@
-//
+
 const menuData = {
   "Coffee Boba": [
     ["Iced Latte Boba", 150, 180],
@@ -34,13 +34,11 @@ const menuData = {
     ["Watermelon Milk Boba", 150, 180]
   ],
 
-  // الأصناف الجديدة التي لم تكن موجودة
   "Ice-Cream": [
     ["Mix flavor", 55, 115]
   ],
   "Milkshake": [
     ["Strawberry Milkshake", 140, 165]
-    // Raspberry Milkshake غير منشور
   ],
   "Iced Coffee": [
     ["Iced Latte", 125],
@@ -77,4 +75,5 @@ const menuData = {
     ["Banana Milkshake", 85]
   ]
 };
+
 
