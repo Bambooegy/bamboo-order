@@ -1,4 +1,4 @@
-// menuData القديم
+//
 const menuData = {
   "Coffee Boba": [
     ["Iced Latte Boba", 150, 180],
@@ -77,3 +77,4 @@ const menuData = {
     ["Banana Milkshake", 85]
   ]
 };
+
