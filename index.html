@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Bamboo Order</title>
+  <title>Bamboo Boba</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -11,6 +11,7 @@
 <header>
   <h1>Bamboo Boba</h1>
   <p>More Bubbles .. Less Troubles</p>
+  <div id="tabs" class="tabs"></div>
 </header>
 
 <main id="menu"></main>
@@ -18,8 +19,11 @@
 <div class="cart">
   <h3>Your Order</h3>
   <ul id="cartItems"></ul>
+  <p id="cartTotal">Total: 0 EGP</p>
   <button onclick="sendWhatsApp()">Order via WhatsApp</button>
 </div>
+
+<div id="toast"></div>
 
 <script src="script.js"></script>
 </body>
